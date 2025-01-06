@@ -1,0 +1,7 @@
+*.exe
+*.txt
+*~
+
+build/
+
+.vscode #vscode Project
