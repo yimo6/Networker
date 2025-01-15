@@ -25,6 +25,7 @@ bool app_push(Application* app){
     return true;
 }
 
+
 //用于联合触发等操作
 bool app_trigger(Application* app){
     if(app -> timer > 0){
