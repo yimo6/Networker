@@ -85,3 +85,5 @@ int worker_send(Worker* worker, const char* data);
 int worker_read(Worker* worker);
 bool worker_set_noblocking(SOCKET sock);
 bool worker_connect(Worker* worker, bool async);
+bool worker_isdomain(const char* data);
+char* worker_domain2ip(const char* domain);

@@ -128,7 +128,7 @@ int worker_read(Worker* worker){
     if(worker -> status == WORKER_STATUS_CLOSED || worker == NULL) return -1;
     Buffer* buf = (Buffer *)worker -> buffer;
     buffer_clear(buf);
-    int rec = recv(worker -> sockid, buf -> data, buf -> size, 0);
+    int rec = recv(worker -> sockid, buf -> data, worker -> bufferSize, 0);
     if(rec > 0){
         buf -> realsize = rec;
         return rec;
