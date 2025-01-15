@@ -87,3 +87,13 @@ size_t buffer_add(Buffer* buf, const char* data){
     buf -> data[buf -> realsize] = '\0';
     return dataLen;
 }
+
+size_t buffer_nadd(Buffer* buf, const char* data, size_t dataLength){
+    if(dataLength == 0) dataLength = strlen(data);
+    size_t newSize = buf -> realsize + dataLength;
+    buffer_check(buf, newSize);
+    strncat(buf -> data, data, dataLength);
+    buf -> realsize = newSize;
+    buf -> data[buf -> realsize] = '\0';
+    return dataLength;
+}
